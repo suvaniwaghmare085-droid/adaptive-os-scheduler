@@ -1,0 +1,23 @@
+[
+  {
+    "task_id": "T1",
+    "arrival_time": 0,
+    "burst_time": 5,
+    "deadline": 8,
+    "priority": 8
+  },
+  {
+    "task_id": "T2",
+    "arrival_time": 1,
+    "burst_time": 3,
+    "deadline": 7,
+    "priority": 6
+  },
+  {
+    "task_id": "T3",
+    "arrival_time": 2,
+    "burst_time": 2,
+    "deadline": 10,
+    "priority": 4
+  }
+]
