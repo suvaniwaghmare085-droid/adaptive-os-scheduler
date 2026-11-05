@@ -1,5 +1,6 @@
 # Adaptive OS Scheduler
 
+
 A web-based educational CPU scheduling simulator. It compares FCFS, Round Robin, and a preemptive Adaptive Priority heuristic. It simulates scheduling; it does not modify the operating system kernel.
 
 ## Requirements
