@@ -47,14 +47,17 @@ def parse_text(content):
 def parse_excel(data):
     try:
         wb=load_workbook(io.BytesIO(data),read_only=True,data_only=True)
-        ws=wb.active; rows=ws.iter_rows(values_only=True); headers=next(rows,None)
+        ws=wb.active
+        iter_rows=getattr(ws,"iter_rows",None)
+        if iter_rows is None: raise ValueError("Excel sheet is empty.")
+        rows=iter_rows(values_only=True); headers=next(rows,None)
         if not headers: raise ValueError("Excel sheet is empty.")
         names=[str(v).strip().lower() if v is not None else "" for v in headers]
         records=[dict(zip(names,row)) for row in rows if any(v is not None for v in row)]
         wb.close(); return validate_records(records)
     except ValueError: raise
     except Exception as e: raise ValueError("Invalid XLSX file.") from e
-
+    
 def parse_content(content,fmt="auto"):
     fmt=fmt.lower()
     if fmt=="auto":

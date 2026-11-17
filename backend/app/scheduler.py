@@ -51,7 +51,7 @@ def adaptive(tasks):
             tid=t["task_id"]; slack=t["deadline"]-time-rem[tid]
             urgency=max(0,min(1,1-slack/max(t["deadline"]-t["arrival_time"],1)))
             wait=max(0,min(1,waits[tid]/max(time-t["arrival_time"],1)))
-            base=(t["priority"]-1)/9
+            base=(t["priority"])/100
             return .5*urgency+.3*wait+.2*base
         chosen=sorted(ready,key=lambda t:(-score(t),t["deadline"],-t["priority"],t["arrival_time"],t["task_id"]))[0]
         tid=chosen["task_id"]; first.setdefault(tid,time); events.append({"task_id":tid,"start":time,"end":time+1})

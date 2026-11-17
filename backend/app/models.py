@@ -6,7 +6,7 @@ class Task(BaseModel):
     arrival_time: int = Field(ge=0)
     burst_time: int = Field(gt=0)
     deadline: int = Field(gt=0)
-    priority: int = Field(ge=1, le=10)
+    priority: int = Field(ge=0, le=100)
 
     @model_validator(mode="after")
     def check_deadline(self):
