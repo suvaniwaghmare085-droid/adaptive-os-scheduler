@@ -87,6 +87,6 @@ pytest
 
 ## Contributors
 
-- Anshika — Data Ingestion, Persistence & QA
+- **[Anshika](https://github.com/Anshika-2322)** — Data Ingestion, Persistence & QA
 - **[Shaivi](https://github.com/iamshaivi)** — Frontend UI & Visualization
 - **[Suvani](https://github.com/suvaniwaghmare085-droid)** — Backend API & Scheduling Engine
